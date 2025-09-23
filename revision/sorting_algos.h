@@ -1,8 +1,9 @@
 #ifndef SORTING_ALGOS
 #define SORTING_ALGOS
 #include<stdio.h>
+#include<stdbool.h>
 
-#define SWAP(a, b) {a = a^b; b = a^b; a = a^b;}while (0)
+#define SWAP(a, b) do {int tmp = (a); (a) = (b); (b) = tmp;} while (0)
 
 typedef unsigned char uchar;
 

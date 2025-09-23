@@ -8,14 +8,29 @@ void printArr(int *arr, uchar size){
 }
 
 void bubbleSort(int *arr, uchar size){
+    if (size < 2) return;
     for(uchar i = 0; i < size; i++){
+        bool swapped = false;
         for(uchar j = 0; j < size - i - 1; j++){
-            if(arr[j] > arr[j+1])SWAP(arr[j], arr[j+1]);
+            if(arr[j] > arr[j+1]){
+                SWAP(arr[j], arr[j+1]);
+                swapped = true;
+            }
         }
+        if(!swapped)break;
     }
 }
 
-void selectionSort(int *arr, uchar size);
+void selectionSort(int *arr, uchar size){
+    if (size < 2) return;
+    for(uchar i = 0; i < size - 1; i++){
+        uchar minIndex = i;
+        for(uchar j = i + 1; j < size; j++){
+            if(arr[j] < arr[minIndex]) minIndex = j;
+        }
+        SWAP(arr[i], arr[minIndex]);
+    }
+}
 
 void insertionSort(int *arr, uchar size);
 
