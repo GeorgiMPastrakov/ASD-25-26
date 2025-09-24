@@ -6,7 +6,7 @@ int main(void){
     uchar size = sizeof(arr)/sizeof(arr[0]);
 
     printArr(arr, size);
-    bubbleSort(arr, size);
+    insertionSort(arr, size);
     printArr(arr, size);
     return 0;
 }

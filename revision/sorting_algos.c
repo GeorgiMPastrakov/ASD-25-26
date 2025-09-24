@@ -32,7 +32,18 @@ void selectionSort(int *arr, uchar size){
     }
 }
 
-void insertionSort(int *arr, uchar size);
+void insertionSort(int *arr, uchar size){
+    if (size < 2) return;
+    for(uchar i = 1; i < size; i++){
+        int key = arr[i];
+        uchar j = i;
+        while(j > 0 && arr[j-1] > key){
+            arr[j] = arr[j-1];
+            j--;
+        }
+        arr[j] = key;
+    }
+}
 
 void mergeSort(int *arr, uchar size);
 
