@@ -6,7 +6,7 @@ int main(void){
     uchar size = sizeof(arr)/sizeof(arr[0]);
 
     printArr(arr, size);
-    insertionSort(arr, size);
+    mergeSort(arr, size);
     printArr(arr, size);
     return 0;
 }

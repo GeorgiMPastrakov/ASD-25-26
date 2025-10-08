@@ -2,8 +2,9 @@
 #define SORTING_ALGOS
 #include<stdio.h>
 #include<stdbool.h>
+#include <string.h>
 
-#define SWAP(a, b) do {int tmp = (a); (a) = (b); (b) = tmp;} while (0)
+#define SWAP(a, b)  {int tmp = (a); (a) = (b); (b) = tmp;}
 
 typedef unsigned char uchar;
 
@@ -11,7 +12,7 @@ void printArr(int *arr, uchar size);
 void bubbleSort(int *arr, uchar size);
 void selectionSort(int *arr, uchar size);
 void insertionSort(int *arr, uchar size);
-void mergeSort(int *arr, uchar size);
+void mergeSort(int *arr, int size);
 void quickSort(int *arr, uchar size);
 void heapSort(int *arr, uchar size);
 void countingSort(int *arr, uchar size);
