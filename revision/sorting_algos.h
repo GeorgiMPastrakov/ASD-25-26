@@ -6,18 +6,16 @@
 
 #define SWAP(a, b)  {int tmp = (a); (a) = (b); (b) = tmp;}
 
-typedef unsigned char uchar;
-
-void printArr(int *arr, uchar size);
-void bubbleSort(int *arr, uchar size);
-void selectionSort(int *arr, uchar size);
-void insertionSort(int *arr, uchar size);
+void printArr(int *arr, int size);
+void bubbleSort(int *arr, int size);
+void selectionSort(int *arr, int size);
+void insertionSort(int *arr, int size);
 void mergeSort(int *arr, int size);
-void quickSort(int *arr, uchar size);
-void heapSort(int *arr, uchar size);
-void countingSort(int *arr, uchar size);
-void radixSort(int *arr, uchar size);
-void bucketSort(int *arr, uchar size);
-void shellSort(int *arr, uchar size);
+void quickSort(int *arr, int low, int high);
+void heapSort(int *arr, int size);
+void countingSort(int *arr, int size);
+void radixSort(int *arr, int size);
+void bucketSort(int *arr, int size);
+void shellSort(int *arr, int size);
 
 #endif

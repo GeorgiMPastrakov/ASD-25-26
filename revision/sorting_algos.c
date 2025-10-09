@@ -1,17 +1,17 @@
 #include "sorting_algos.h"
 
-void printArr(int *arr, uchar size){
-    for(uchar i = 0; i < size; i++){
+void printArr(int *arr, int size){
+    for(int i = 0; i < size; i++){
         printf(" [%d] ", arr[i]);
     }
     printf("\n");
 }
 
-void bubbleSort(int *arr, uchar size){
+void bubbleSort(int *arr, int size){
     if (size < 2) return;
-    for(uchar i = 0; i < size; i++){
+    for(int i = 0; i < size; i++){
         bool swapped = false;
-        for(uchar j = 0; j < size - i - 1; j++){
+        for(int j = 0; j < size - i - 1; j++){
             if(arr[j] > arr[j+1]){
                 SWAP(arr[j], arr[j+1]);
                 swapped = true;
@@ -21,22 +21,22 @@ void bubbleSort(int *arr, uchar size){
     }
 }
 
-void selectionSort(int *arr, uchar size){
+void selectionSort(int *arr, int size){
     if (size < 2) return;
-    for(uchar i = 0; i < size - 1; i++){
-        uchar minIndex = i;
-        for(uchar j = i + 1; j < size; j++){
+    for(int i = 0; i < size - 1; i++){
+        int minIndex = i;
+        for(int j = i + 1; j < size; j++){
             if(arr[j] < arr[minIndex]) minIndex = j;
         }
         SWAP(arr[i], arr[minIndex]);
     }
 }
 
-void insertionSort(int *arr, uchar size){
+void insertionSort(int *arr, int size){
     if (size < 2) return;
-    for(uchar i = 1; i < size; i++){
+    for(int i = 1; i < size; i++){
         int key = arr[i];
-        uchar j = i;
+        int j = i;
         while(j > 0 && arr[j-1] > key){
             arr[j] = arr[j-1];
             j--;
@@ -78,14 +78,33 @@ void mergeSort(int *arr, int size) {
         mergeSortRec(arr, 0, size - 1);
 }
 
-void quickSort(int *arr, uchar size);
+static int partition(int *arr, int low, int high) {
+    int pivot = arr[high];
+    int i = low - 1;
+    for (int j = low; j < high; j++) {
+        if (arr[j] < pivot) {
+            SWAP(arr[++i], arr[j]);
+        }
+    }
+    SWAP(arr[i + 1], arr[high]);
+    return i + 1;
+}
 
-void heapSort(int *arr, uchar size);
+void quickSort(int *arr, int low, int high) {
+    if (low < high) {
+        int p = partition(arr, low, high);
+        quickSort(arr, low, p - 1);
+        quickSort(arr, p + 1, high);
+    }
+}
 
-void countingSort(int *arr, uchar size);
 
-void radixSort(int *arr, uchar size);
+void heapSort(int *arr, int size);
 
-void bucketSort(int *arr, uchar size);
+void countingSort(int *arr, int size);
 
-void shellSort(int *arr, uchar size);
+void radixSort(int *arr, int size);
+
+void bucketSort(int *arr, int size);
+
+void shellSort(int *arr, int size);
