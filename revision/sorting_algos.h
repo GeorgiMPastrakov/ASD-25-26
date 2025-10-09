@@ -1,7 +1,7 @@
 #ifndef SORTING_ALGOS
 #define SORTING_ALGOS
-#include<stdio.h>
-#include<stdbool.h>
+#include <stdio.h>
+#include <stdbool.h>
 #include <string.h>
 
 #define SWAP(a, b)  {int tmp = (a); (a) = (b); (b) = tmp;}
